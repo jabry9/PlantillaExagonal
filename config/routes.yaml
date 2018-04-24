@@ -1,0 +1,31 @@
+#index:
+#    path: /
+#    controller: App\Controller\DefaultController::index
+
+allOrdersPaid:
+    path: /order/dropshipping
+    controller: App\Infrastructure\Controller\DropShippingController::allOrdersPaid
+    methods: [GET]
+
+updateAnOrderWithArticle:
+    path: /order/dropshipping/{orderId}/article/{articleId}/reset
+    controller: App\Infrastructure\Controller\DropShippingController::resetAnOrderWithArticle
+    methods: [POST]
+
+getAnOrderWhithOrderId:
+    path: /order/dropshipping/{orderId}
+    controller: App\Infrastructure\Controller\DropShippingController::getAnOrderWithOrderId
+    methods: [GET]
+
+updateProviderFromOrderWithArticle:
+    path: /order/dropshipping/{orderId}/article/{articleId}
+    controller: App\Infrastructure\Controller\DropShippingController::updateProviderFromOrderWithArticle
+    methods: [POST]
+
+allOrdersPaidPage:
+    path: /order/dropshipping/page/{page}/{ordersPerPage}
+    controller: App\Infrastructure\Controller\DropShippingController::allOrdersPaidPage
+    defaults:
+     page: "ALL"
+     ordersPerPage: 5
+    methods: [GET]
